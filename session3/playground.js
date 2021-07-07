@@ -71,38 +71,13 @@
 // myFun()
 
 //api read (fetch) https://jsonplaceholder.typicode.com/users
-p = document.querySelector('#content-wrapper')
-const createCustomElements = function(parent, elementTag, classes, textContent, attributes){
-    myNewElement = document.createElement(elementTag)
-    myNewElement.classList = classes
-    myNewElement.textContent = textContent
-    attributes.forEach(attr=>{
-        myNewElement.setAttribute(attr.attrName, attr.attrValue)
-    })
-    parent.appendChild(myNewElement)
-    return myNewElement
-}
-showSinglePhoto = (element)=>{
-    console.log(element)
-    const mainDiv = createCustomElements(p, 'div', 'col-4 p-3 y', '', []) 
-    const mainDiv2 = createCustomElements(mainDiv, 'div', 'border border-3 border-primary m-3 p-3 x', '', []) 
-    createCustomElements(mainDiv2,'img','',element.url, [{attrName:"src",attrValue:element.url}])
-    
-}
 const myApiCall = async(cb) =>{
-    let data = await fetch('https://jsonplaceholder.typicode.com/photos?_limit=20')
+    let data = await fetch('https://jsonplaceholder.typicode.com/users')
     let x = await data.json()
     // return(x)
     //console.log(x)
     cb(x)
     ////////////////////
 }
-showAllData=(data)=>{
-    console.log(data)
-    data.forEach(element => {
-        showSinglePhoto(element)  
-    });
-}
-myApiCall(data=> showAllData(data))
-
+myApiCall(data=> console.log(data))
 
