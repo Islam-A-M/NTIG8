@@ -1,0 +1,17 @@
+{
+  "name": "expressapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/app.env nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv-cli": "^4.0.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.2"
+  }
+}
