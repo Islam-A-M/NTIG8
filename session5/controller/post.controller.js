@@ -7,10 +7,11 @@ add = async(req,res)=>{
         res.status(200).send({
             apiStatus: true,
             message: " data inserted",
-            data: userData
+            data: postData
         })
     }
     catch(e){
+        console.log(e);
         res.status(500).send({
             apiStatus:false,
             message: "error inserting data",
